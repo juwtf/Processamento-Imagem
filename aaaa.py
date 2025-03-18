@@ -2,7 +2,7 @@ import cv2
 import numpy
 import matplotlib.pyplot as plt
 
-img = cv2.imread("iansa.jpg")
+img = cv2.imread("fotografa.jpg")
 
 print('Largura em pixels: ', end='')
 print(img.shape[1])
@@ -44,12 +44,13 @@ for i in range(256):
 plt.xlabel('Pixel')
 plt.ylabel('Quantidade')
 
-#plt.title('Histograma de imagem em tons cinza')
+plt.title('Histograma de imagem em tons de cinza')
 
 def hist(imagem, canal):
-    histograma = numpy.zeros(256, dtype=numpy.uint8)
+    histograma = numpy.zeros(256, dtype=numpy.uint)
     
     #histograma = 256*[0]
+
 
     for i in range(imagem.shape[0]):
         for j in range(imagem.shape[1]):
@@ -61,17 +62,14 @@ def hist(imagem, canal):
 
 azul = hist(img[:, :, 0], "Blue")
 plt.bar(pixel, azul, color='blue')
-plt.title('Histograma de imagem em tons azul')
 plt.show()
 
 verde = hist(img[:, :, 1], "Green")
 plt.bar(pixel, verde, color='green')
-plt.title('Histograma de imagem em tons verde')
 plt.show()
 
 vermelho = hist(img[:, :, 2], "Red")
 plt.bar(pixel, vermelho, color='red')
-plt.title('Histograma de imagem em tons vermelho')
 plt.show()
 
 
