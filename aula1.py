@@ -3,7 +3,7 @@ import numpy
 import matplotlib.pyplot as plt
 
 #LE A IMAGEM
-img = cv2.imread("jamaica.png")
+img = cv2.imread("iansa.jpg")
 
  
 canalBlue = numpy.zeros((img.shape[0], img.shape[1], img.shape[2]), dtype=numpy.uint8)
@@ -26,12 +26,15 @@ pixel = 256*[0]
 for i in range(256):
     
     pixel[i] = i
+
  
 
 #HISTOGRAMA DE TONS RGB DA IMAGEM
 def hist(imagem, canal):
     histograma = numpy.zeros(256, dtype=numpy.uint8)
     
+    #histograma = 256*[0]
+
     for i in range(imagem.shape[0]):
         for j in range(imagem.shape[1]):
             histograma[imagem[i][j]] +=1
