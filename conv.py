@@ -57,7 +57,7 @@ filtro_desfoque = np.array([
     [1, 1, 1, 1, 1],
     [1, 1, 1, 1, 1],
     [1, 1, 1, 1, 1]
-], dtype=np.float32)/25
+], dtype=np.float32)/26
 
 
 imagem_convoluida = convolucao(imagem, filtro_desfoque)
